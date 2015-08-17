@@ -22,4 +22,11 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  host: localhost
+  adapter: postgresql
+  encoding: utf8
+  database: testapp
+  pool: 5
+  username: <%= ENV['TESTAPP_DB_USER'] %>
+  password: <%= ENV['TESTAPP_DB_PASSWORD'] %>
+  
